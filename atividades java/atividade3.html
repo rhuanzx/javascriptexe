@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <style>
+  body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+ul {
+  list-style-type:none;
+  padding:0
+}
+
+label {
+  display: block;
+  margin-top: 10px;
+}
+
+input[type="text"] {
+  width: 200px;
+  padding: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4800f1;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: rgb(255, 58, 58);
+}
+   </style>
+</head>
+<body>
+  <h1>Acrescentar item</h1>
+  <h2>Lista</h2>
+
+  <ul id="lista">
+    <li>Café</li>
+    <li>Arroz</li>
+  </ul>
+  
+  <label for="itemadd">Novo item:</label>
+  <input type="text" id="itemadd">
+  <br>
+  
+  <label>Cor:</label>
+  
+  <label for="colorBlack">Preto</label>
+  <input type="radio" id="colorBlack" name="coritem" value="black">
+  
+  <label for="colorRed">Vermelho</label>
+  <input type="radio" id="colorRed" name="coritem" value="red">
+  
+  <label for="colorGreen">Verde</label>
+  <input type="radio" id="colorGreen" name="coritem" value="green">
+  <br>
+  
+  <p>Clique no botão para acrescentar um item ao final da lista:</p>
+  
+  <button id="buttonAdd">Acrescentar</button>
+  <br><br>
+  <a href="./index.html"><button>Clique aqui para voltar a tela inicial</button></a>
+  
+  <script>
+    document.getElementById("buttonAdd").addEventListener("click", function() {
+      const item = document.getElementById("itemadd").value;
+      const coritem = document.querySelector('input[name="coritem"]:checked').value;
+      
+      const node = document.createElement("li");
+      node.innerText = item;
+      node.style.color = coritem;
+      
+      document.getElementById("lista").appendChild(node);
+    });
+  </script>
+</body>
+</html>

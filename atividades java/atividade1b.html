@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <title>Calcular Media</title>
+    <style>
+
+    body {
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+h1 {
+  margin-top: 50px;
+}
+
+label {
+  display: block;
+  margin-top: 20px;
+}
+
+input {
+  padding: 5px;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4800f1;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: rgb(255, 58, 58);
+}
+
+p {
+  margin-top: 20px;
+}
+
+a button {
+  margin-top: 20px;
+  text-decoration: none;
+}
+    </style>
+</head>
+<body>
+  <h1>Calculadora de Média</h1>
+  <label>Nota 1:</label> 
+    <input type="text" id="nota1">
+  <label>Nota 2: </label>
+    <input type="text" id="nota2">
+  <br><br>
+  <button onclick="calcularMedia()">Calcular Média</button>
+
+  <p>
+    <span id="media"></span>
+  </p>
+  <p>
+    <span id="situacao"></span>
+  </p>
+  <a href="./index.html"><button>Clique aqui para voltar a tela inicial</button></a>
+
+  <script>
+    function calcularMedia() {
+      var nota1 = parseFloat(document.getElementById("nota1").value);
+      var nota2 = parseFloat(document.getElementById("nota2").value);
+      var media = (nota1 + nota2) / 2;
+      var situacao;
+
+      if (media >= 6) {
+        situacao = "<span style='color: blue;'>APROVADO</span>";
+      } else {
+        situacao = "<span style='color: red;'>REPROVADO</span>";
+      }
+
+      document.getElementById("media").innerHTML = "Média: " + media.toFixed(2);
+      document.getElementById("situacao").innerHTML = "Situação: " + situacao;
+    }
+  </script>
+</body>
+</html>

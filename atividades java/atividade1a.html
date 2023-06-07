@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <title>Atividade 1 A</title>
+    <style>
+
+body {
+  font-family: Arial, sans-serif;
+  font-size: larger;
+  text-align: center;
+}
+
+button {
+  padding: 10px 20px;
+  background-color: #4800f1;
+  color: white;
+  border: none;
+  cursor: pointer;
+  margin-top: 20px;
+}
+
+button:hover {
+  background-color: rgb(255, 58, 58);
+}
+
+a button {
+  margin-top: 20px;
+  text-decoration: none;
+}
+    </style>
+</head>
+
+<body>
+  <button onclick="calcularMedia()">Calcular Média</button>
+            <p>Média: <span id="RMedia"></span></p>
+            <p>Situação: <span id="RSituacao"></span></p>
+
+        <a href="./index.html"><button>Clique aqui para voltar a tela inicial</button></a>
+</body>
+
+<script>
+    var n1 = prompt("Digite a nota 1: ");
+    var n2 = prompt("Digite a nota 2: ");
+    
+    function calcularMedia() {
+        var situacao = "";
+        var cor = "";
+        var nota1 = parseFloat(n1);
+        var nota2 = parseFloat(n2);
+        var cordeFundo = document.getElementById("RSituacao");
+        media = (nota1 + nota2) / 2;
+
+        if (media >= 6) {
+            situacao = "Aprovado";
+            cor = "Blue"
+        } else {
+            situacao = "Reprovado";
+            cor = "Red"
+        }
+
+        cordeFundo.style.color = cor;
+        document.getElementById("RMedia").innerHTML = media;
+        document.getElementById("RSituacao").innerHTML = situacao;
+    }
+
+</script>
+
+</html>
